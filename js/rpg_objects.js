@@ -5435,7 +5435,7 @@ Game_Map.prototype.initialize = function() {
     this._parallaxY = 0;
     this._battleback1Name = null;
     this._battleback2Name = null;
-    this.createVehicles();
+  //this.createVehicles();
 };
 
 Game_Map.prototype.setup = function(mapId) {
@@ -6071,10 +6071,10 @@ Game_Map.prototype.doScroll = function(direction, distance) {
 
 Game_Map.prototype.updateEvents = function() {
     this.events().forEach(function(event) {
-        event.update();
+      event.update();
     });
     this._commonEvents.forEach(function(event) {
-        event.update();
+      event.update();
     });
 };
 
@@ -10718,7 +10718,7 @@ Game_Interpreter.requestImagesForCommand = function(command){
             var commandName = args.shift();
             Game_Interpreter.requestImagesByPluginCommand(commandName,args);
         break;
-            
+
     }
 };
 
@@ -10745,7 +10745,7 @@ Game_Interpreter.requestImages = function(list, commonList){
         if(command.code ===117){
             Game_Interpreter.requestImagesByChildEvent(command,commonList);
         }else{
-            Game_Interpreter.requestImagesForCommand(command);            
+            Game_Interpreter.requestImagesForCommand(command);
         }
     }
 };

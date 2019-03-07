@@ -340,7 +340,7 @@ Utils.generateRuntimeId = function(){
 Utils._supportPassiveEvent = null;
 /**
  * Test this browser support passive event feature
- * 
+ *
  * @static
  * @method isSupportPassiveEvent
  * @return {Boolean} this browser support passive event or not
@@ -815,7 +815,7 @@ Bitmap.prototype._createCanvas = function(width, height){
         this.__canvas.height = h;
         this._createBaseTexture(this._canvas);
 
-        this.__context.drawImage(this._image, 0, 0);
+      this.__context.drawImage(this._image, 0, 0);
     }
 
     this._setDirty();
@@ -2326,7 +2326,8 @@ Graphics.loadFont = function(name, url) {
  */
 Graphics.isFontLoaded = function(name) {
     if (Graphics._cssFontLoading) {
-        if(Graphics._fontLoaded){
+      if(Graphics._fontLoaded){
+        return true;
             return Graphics._fontLoaded.check('10px "'+name+'"');
         }
 
@@ -2899,7 +2900,7 @@ Graphics._paintUpperCanvas = function() {
         var alpha = ((this._loadingCount - 20) / 30).clamp(0, 1);
         context.save();
         context.globalAlpha = alpha;
-        context.drawImage(this._loadingImage, dx, dy);
+      // context.drawImage(this._loadingImage, dx, dy);
         context.restore();
     }
 };
@@ -3246,7 +3247,7 @@ Graphics._switchFullScreen = function() {
  */
 Graphics._isFullScreen = function() {
     return document.fullscreenElement ||
-           document.mozFullScreen || 
+           document.mozFullScreen ||
            document.webkitFullscreenElement ||
            document.msFullscreenElement;
 };
@@ -3275,7 +3276,7 @@ Graphics._requestFullScreen = function() {
  * @private
  */
 Graphics._cancelFullScreen = function() {
-    if (document.exitFullscreen) { 
+    if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();

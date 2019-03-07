@@ -63,7 +63,7 @@ Window_Base.prototype.standardBackOpacity = function() {
 };
 
 Window_Base.prototype.loadWindowskin = function() {
-    this.windowskin = ImageManager.loadSystem('Window');
+  this.windowskin = ImageManager.loadSystem('Window');
 };
 
 Window_Base.prototype.updatePadding = function() {
@@ -3087,7 +3087,7 @@ Window_ShopNumber.prototype.setCurrencyUnit = function(currencyUnit) {
 };
 
 Window_ShopNumber.prototype.createButtons = function() {
-    var bitmap = ImageManager.loadSystem('ButtonSet');
+  var bitmap = ImageManager.loadSystem('ButtonSet');
     var buttonWidth = 48;
     var buttonHeight = 48;
     this._buttons = [];
@@ -4256,8 +4256,8 @@ Window_Message.prototype.initialize = function() {
     Window_Base.prototype.initialize.call(this, x, 0, width, height);
     this.openness = 0;
     this.initMembers();
-    this.createSubWindows();
-    this.updatePlacement();
+  this.createSubWindows();
+  //this.updatePlacement();
 };
 
 Window_Message.prototype.initMembers = function() {
@@ -4271,17 +4271,17 @@ Window_Message.prototype.initMembers = function() {
 };
 
 Window_Message.prototype.subWindows = function() {
-    return [this._goldWindow, this._choiceWindow,
-            this._numberWindow, this._itemWindow];
+  return [this._choiceWindow]; //this._goldWindow, ,
+//            this._numberWindow, this._itemWindow];
 };
 
 Window_Message.prototype.createSubWindows = function() {
-    this._goldWindow = new Window_Gold(0, 0);
-    this._goldWindow.x = Graphics.boxWidth - this._goldWindow.width;
-    this._goldWindow.openness = 0;
+//    this._goldWindow = new Window_Gold(0, 0);
+//    this._goldWindow.x = Graphics.boxWidth - this._goldWindow.width;
+//    this._goldWindow.openness = 0;
     this._choiceWindow = new Window_ChoiceList(this);
-    this._numberWindow = new Window_NumberInput(this);
-    this._itemWindow = new Window_EventItem(this);
+//    this._numberWindow = new Window_NumberInput(this);
+//    this._itemWindow = new Window_EventItem(this);
 };
 
 Window_Message.prototype.windowWidth = function() {
@@ -4350,7 +4350,7 @@ Window_Message.prototype.startMessage = function() {
 Window_Message.prototype.updatePlacement = function() {
     this._positionType = $gameMessage.positionType();
     this.y = this._positionType * (Graphics.boxHeight - this.height) / 2;
-    this._goldWindow.y = this.y > 0 ? 0 : Graphics.boxHeight - this._goldWindow.height;
+  // this._goldWindow.y = this.y > 0 ? 0 : Graphics.boxHeight - this._goldWindow.height;
 };
 
 Window_Message.prototype.updateBackground = function() {
@@ -4360,7 +4360,7 @@ Window_Message.prototype.updateBackground = function() {
 
 Window_Message.prototype.terminateMessage = function() {
     this.close();
-    this._goldWindow.close();
+//    this._goldWindow.close();
     $gameMessage.clear();
 };
 
@@ -4405,9 +4405,7 @@ Window_Message.prototype.updateInput = function() {
 };
 
 Window_Message.prototype.isAnySubWindowActive = function() {
-    return (this._choiceWindow.active ||
-            this._numberWindow.active ||
-            this._itemWindow.active);
+  return this._choiceWindow.active;
 };
 
 Window_Message.prototype.updateMessage = function() {

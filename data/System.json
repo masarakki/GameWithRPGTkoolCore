@@ -1,0 +1,33 @@
+{
+  "airship": {"startMapId": 2, "startX": 0, "startY": 0, "charactorName": "", "charactorIndex": 1},
+  "boat": {"startMapId": 2, "startX": 0, "startY": 0, "charactorName": "", "charactorIndex": 2},
+  "ship": {"startMapId": 2, "startX": 0, "startY": 0, "charactorName": "", "charactorIndex": 3},
+  "locale": "ja JP",
+  "partyMembers": [],
+  "terms": {
+    "commands": [
+      "戦う", "逃げる", "attack",  "guard",
+      "item",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "ニューゲーム",
+      "continue_",
+      "toTitle",
+      "cancel",
+      "buy",
+      "sell"
+    ]
+  },
+  "windowTone": [0,0,0,0]
+}
