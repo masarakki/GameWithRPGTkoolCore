@@ -945,6 +945,7 @@ ImageManager.clear = function() {
 };
 
 ImageManager.isReady = function() {
+  return true;
     return this._imageCache.isReady();
 };
 
@@ -1232,7 +1233,7 @@ AudioManager.playBgm = function(bgm, pos) {
         this.updateBgmParameters(bgm);
     } else {
         this.stopBgm();
-        if (bgm.name) { 
+        if (bgm.name) {
             if(Decrypter.hasEncryptedAudio && this.shouldUseHtml5Audio()){
                 this.playEncryptedBgm(bgm, pos);
             }
@@ -1587,10 +1588,12 @@ function SoundManager() {
 }
 
 SoundManager.preloadImportantSounds = function() {
-    this.loadSystemSound(0);
+  /*
+  this.loadSystemSound(0);
     this.loadSystemSound(1);
     this.loadSystemSound(2);
     this.loadSystemSound(3);
+  */
 };
 
 SoundManager.loadSystemSound = function(n) {
@@ -1600,7 +1603,7 @@ SoundManager.loadSystemSound = function(n) {
 };
 
 SoundManager.playSystemSound = function(n) {
-    if ($dataSystem) {
+    if ($dataSystem && false) {
         AudioManager.playStaticSe($dataSystem.sounds[n]);
     }
 };

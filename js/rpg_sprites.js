@@ -2142,10 +2142,12 @@ Spriteset_Base.prototype.createUpperLayer = function() {
 };
 
 Spriteset_Base.prototype.update = function() {
+  /*
     Sprite.prototype.update.call(this);
-    this.updateScreenSprites();
+  this.updateScreenSprites();
     this.updateToneChanger();
     this.updatePosition();
+*/
 };
 
 Spriteset_Base.prototype.createBaseSprite = function() {
@@ -2278,12 +2280,14 @@ Spriteset_Map.prototype.createLowerLayer = function() {
 };
 
 Spriteset_Map.prototype.update = function() {
+  /*
     Spriteset_Base.prototype.update.call(this);
     this.updateTileset();
     this.updateParallax();
     this.updateTilemap();
     this.updateShadow();
     this.updateWeather();
+*/
 };
 
 Spriteset_Map.prototype.hideCharacters = function() {
